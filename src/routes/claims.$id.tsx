@@ -1,5 +1,5 @@
 import { createFileRoute, Link, notFound, useNavigate } from "@tanstack/react-router";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { BarqHeader } from "@/components/BarqHeader";
 import { RoutingBadge } from "@/components/RoutingBadge";
 import { useClaim, claimsStore } from "@/lib/claims-store";
