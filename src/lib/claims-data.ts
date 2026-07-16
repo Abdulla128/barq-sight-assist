@@ -60,9 +60,12 @@ export interface Photo {
 }
 
 import claimAImg from "@/assets/claim-a.jpg";
+import claimA2Img from "@/assets/claim-a-2.jpg";
 import claimB1Img from "@/assets/claim-b-1.jpg";
-import claimB2Img from "@/assets/claim-b-2.jpg";
-import claimCImg from "@/assets/claim-c.jpg";
+import claimB2Img from "@/assets/claim-b-trunk.jpg";
+import claimBRear2Img from "@/assets/claim-b-rear-2.jpg";
+import claimC2Img from "@/assets/claim-c-2.jpg";
+import claimCFrontAsset from "@/assets/claim-c-front.jpg.asset.json";
 
 export interface Claim {
   id: string;
@@ -157,7 +160,7 @@ export const INITIAL_CLAIMS: Claim[] = [
     },
     photos: [
       { filename: "front_door_L_01.jpg", hue: 210, src: claimAImg },
-      { filename: "front_door_L_02.jpg", hue: 200, src: claimAImg },
+      { filename: "front_door_L_02.jpg", hue: 200, src: claimA2Img },
     ],
     activity: [
       { timestamp: "09:14", action: "Claim received from carrier intake" },
@@ -197,9 +200,8 @@ export const INITIAL_CLAIMS: Claim[] = [
     },
     photos: [
       { filename: "rear_bumper_01.jpg", hue: 220, src: claimB1Img },
-      { filename: "rear_bumper_02.jpg", hue: 215, src: claimB1Img },
+      { filename: "rear_bumper_02.jpg", hue: 215, src: claimBRear2Img },
       { filename: "trunk_lid.jpg", hue: 230, src: claimB2Img },
-      
     ],
     activity: [
       { timestamp: "10:02", action: "Claim received from carrier intake" },
@@ -238,9 +240,8 @@ export const INITIAL_CLAIMS: Claim[] = [
       ],
     },
     photos: [
-      { filename: "front_bumper_crush.jpg", hue: 10, src: claimCImg },
-      { filename: "hood_deformation.jpg", hue: 20, src: claimCImg },
-      
+      { filename: "front_bumper_crush.jpg", hue: 10, src: claimCFrontAsset.url },
+      { filename: "hood_deformation.jpg", hue: 20, src: claimC2Img },
     ],
     activity: [
       { timestamp: "08:47", action: "Claim received from carrier intake" },
