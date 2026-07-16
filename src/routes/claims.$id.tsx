@@ -12,6 +12,7 @@ import {
   totalRange,
   type Action,
   type PanelAssessment,
+  type Photo,
 } from "@/lib/claims-data";
 
 export const Route = createFileRoute("/claims/$id")({
