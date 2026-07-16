@@ -53,9 +53,16 @@ export interface ActivityEntry {
 
 export interface Photo {
   filename: string;
-  // simple color hint for the mock thumbnail
+  // simple color hint for the mock thumbnail (fallback)
   hue: number;
+  // optional real image URL; falls back to gradient placeholder when absent
+  src?: string;
 }
+
+import claimAImg from "@/assets/claim-a.jpg";
+import claimB1Img from "@/assets/claim-b-1.jpg";
+import claimB2Img from "@/assets/claim-b-2.jpg";
+import claimCImg from "@/assets/claim-c.jpg";
 
 export interface Claim {
   id: string;
@@ -149,8 +156,8 @@ export const INITIAL_CLAIMS: Claim[] = [
       ],
     },
     photos: [
-      { filename: "front_door_L_01.jpg", hue: 210 },
-      { filename: "front_door_L_02.jpg", hue: 200 },
+      { filename: "front_door_L_01.jpg", hue: 210, src: claimAImg },
+      { filename: "front_door_L_02.jpg", hue: 200, src: claimAImg },
       { filename: "vin_plate.jpg", hue: 40 },
     ],
     activity: [
@@ -190,9 +197,9 @@ export const INITIAL_CLAIMS: Claim[] = [
       ],
     },
     photos: [
-      { filename: "rear_bumper_01.jpg", hue: 220 },
-      { filename: "rear_bumper_02.jpg", hue: 215 },
-      { filename: "trunk_lid.jpg", hue: 230 },
+      { filename: "rear_bumper_01.jpg", hue: 220, src: claimB1Img },
+      { filename: "rear_bumper_02.jpg", hue: 215, src: claimB1Img },
+      { filename: "trunk_lid.jpg", hue: 230, src: claimB2Img },
       { filename: "quarter_L.jpg", hue: 225 },
     ],
     activity: [
@@ -232,8 +239,8 @@ export const INITIAL_CLAIMS: Claim[] = [
       ],
     },
     photos: [
-      { filename: "front_bumper_crush.jpg", hue: 10 },
-      { filename: "hood_deformation.jpg", hue: 20 },
+      { filename: "front_bumper_crush.jpg", hue: 10, src: claimCImg },
+      { filename: "hood_deformation.jpg", hue: 20, src: claimCImg },
       { filename: "cabin_airbag.jpg", hue: 350 },
     ],
     activity: [
