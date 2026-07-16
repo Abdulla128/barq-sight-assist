@@ -195,7 +195,12 @@ function ClaimDetail() {
           <h2 className="text-sm font-semibold text-slate-900">Photos</h2>
           <div className="mt-3 flex flex-wrap gap-4">
             {claim.photos.map((p) => (
-              <div key={p.filename} className="w-40">
+              <button
+                key={p.filename}
+                onClick={() => p.src && setActivePhoto(p)}
+                disabled={!p.src}
+                className="w-40 cursor-pointer text-left disabled:cursor-default"
+              >
                 {p.src ? (
                   <img
                     src={p.src}
@@ -216,7 +221,7 @@ function ClaimDetail() {
                   </div>
                 )}
                 <p className="mt-1 truncate text-xs text-muted-foreground">{p.filename}</p>
-              </div>
+              </button>
             ))}
           </div>
         </section>
