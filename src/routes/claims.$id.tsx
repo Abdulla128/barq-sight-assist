@@ -44,6 +44,7 @@ function ClaimDetail() {
   const [showUnderHood, setShowUnderHood] = useState(false);
   const [banner, setBanner] = useState<{ tone: "ok" | "warn"; text: string } | null>(null);
   const [escalateOpen, setEscalateOpen] = useState(false);
+  const [activePhoto, setActivePhoto] = useState<Photo | null>(null);
 
   if (!claim) throw notFound();
 
