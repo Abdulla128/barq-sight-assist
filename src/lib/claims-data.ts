@@ -65,7 +65,7 @@ import claimB1Img from "@/assets/claim-b-1.jpg";
 import claimB2Img from "@/assets/claim-b-trunk.jpg";
 import claimBRear2Img from "@/assets/claim-b-rear-2.jpg";
 import claimC2Img from "@/assets/claim-c-2.jpg";
-import claimCFrontAsset from "@/assets/claim-c-front.jpg.asset.json";
+import claimCFrontImg from "@/assets/claim-c-front.jpg";
 
 export interface Claim {
   id: string;
@@ -240,8 +240,8 @@ export const INITIAL_CLAIMS: Claim[] = [
       ],
     },
     photos: [
-      { filename: "front_bumper_crush.jpg", hue: 10, src: claimCFrontAsset.url },
-      { filename: "hood_deformation.jpg", hue: 20, src: claimC2Img },
+      { filename: "front_collision_01.jpg", hue: 10, src: claimCFrontImg },
+      { filename: "front_collision_02.jpg", hue: 20, src: claimC2Img },
     ],
     activity: [
       { timestamp: "08:47", action: "Claim received from carrier intake" },
