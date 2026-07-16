@@ -62,9 +62,8 @@ export interface Photo {
 import claimAImg from "@/assets/claim-a.jpg";
 import claimA2Img from "@/assets/claim-a-2.jpg";
 import claimB1Img from "@/assets/claim-b-1.jpg";
-import claimB2Img from "@/assets/claim-b-2.jpg";
-import claimBRear2Img from "@/assets/claim-b-2.jpg";
-import claimCImg from "@/assets/claim-c.jpg";
+import claimB2Img from "@/assets/claim-b-trunk.jpg";
+import claimBRear2Img from "@/assets/claim-b-rear-2.jpg";
 import claimC2Img from "@/assets/claim-c-2.jpg";
 import claimCFrontAsset from "@/assets/claim-c-front.jpg.asset.json";
 
