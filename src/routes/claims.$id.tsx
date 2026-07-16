@@ -199,7 +199,9 @@ function ClaimDetail() {
                     src={p.src}
                     alt={p.filename}
                     loading="lazy"
-                    className="h-24 w-full rounded-md border border-border object-cover"
+                    className={`h-24 w-full rounded-md border border-border object-cover ${
+                      claim.id === "C" ? "object-top" : "object-center"
+                    }`}
                   />
                 ) : (
                   <div
