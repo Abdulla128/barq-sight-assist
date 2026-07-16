@@ -458,6 +458,10 @@ function ClaimDetail() {
         </section>
       </main>
 
+      {activePhoto && (
+        <PhotoLightbox photo={activePhoto} onClose={() => setActivePhoto(null)} />
+      )}
+
       {escalateOpen && (
         <EscalateModal onCancel={() => setEscalateOpen(false)} onConfirm={escalate} />
       )}
