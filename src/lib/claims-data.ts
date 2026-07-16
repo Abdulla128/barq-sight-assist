@@ -199,7 +199,7 @@ export const INITIAL_CLAIMS: Claim[] = [
       { filename: "rear_bumper_01.jpg", hue: 220, src: claimB1Img },
       { filename: "rear_bumper_02.jpg", hue: 215, src: claimB1Img },
       { filename: "trunk_lid.jpg", hue: 230, src: claimB2Img },
-      { filename: "quarter_L.jpg", hue: 225 },
+      
     ],
     activity: [
       { timestamp: "10:02", action: "Claim received from carrier intake" },
