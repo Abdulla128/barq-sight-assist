@@ -549,3 +549,37 @@ function EscalateModal({
     </div>
   );
 }
+
+function PhotoLightbox({ photo, onClose }: { photo: Photo; onClose: () => void }) {
+  useEffect(() => {
+    function onKeyDown(e: KeyboardEvent) {
+      if (e.key === "Escape") onClose();
+    }
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [onClose]);
+
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/90 p-4"
+      onClick={onClose}
+    >
+      <div className="relative max-h-full max-w-4xl">
+        <button
+          onClick={onClose}
+          className="absolute -top-10 right-0 rounded-md px-2 py-1 text-sm text-white hover:bg-white/10"
+          aria-label="Close photo"
+        >
+          Close
+        </button>
+        <img
+          src={photo.src}
+          alt={photo.filename}
+          className="max-h-[80vh] w-full rounded-lg object-contain shadow-xl"
+          onClick={(e) => e.stopPropagation()}
+        />
+        <p className="mt-2 text-center text-sm text-white/80">{photo.filename}</p>
+      </div>
+    </div>
+  );
+}
