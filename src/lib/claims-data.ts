@@ -158,7 +158,6 @@ export const INITIAL_CLAIMS: Claim[] = [
     photos: [
       { filename: "front_door_L_01.jpg", hue: 210, src: claimAImg },
       { filename: "front_door_L_02.jpg", hue: 200, src: claimAImg },
-      { filename: "vin_plate.jpg", hue: 40 },
     ],
     activity: [
       { timestamp: "09:14", action: "Claim received from carrier intake" },
@@ -200,7 +199,7 @@ export const INITIAL_CLAIMS: Claim[] = [
       { filename: "rear_bumper_01.jpg", hue: 220, src: claimB1Img },
       { filename: "rear_bumper_02.jpg", hue: 215, src: claimB1Img },
       { filename: "trunk_lid.jpg", hue: 230, src: claimB2Img },
-      { filename: "quarter_L.jpg", hue: 225 },
+      
     ],
     activity: [
       { timestamp: "10:02", action: "Claim received from carrier intake" },
@@ -241,7 +240,7 @@ export const INITIAL_CLAIMS: Claim[] = [
     photos: [
       { filename: "front_bumper_crush.jpg", hue: 10, src: claimCImg },
       { filename: "hood_deformation.jpg", hue: 20, src: claimCImg },
-      { filename: "cabin_airbag.jpg", hue: 350 },
+      
     ],
     activity: [
       { timestamp: "08:47", action: "Claim received from carrier intake" },

@@ -20,6 +20,10 @@ export const claimsStore = {
     claims = claims.map((c) => (c.id === id ? updater(structuredClone(c)) : c));
     emit();
   },
+  reset() {
+    claims = INITIAL_CLAIMS.map((c) => structuredClone(c));
+    emit();
+  },
   add(claim: Claim) {
     claims = [claim, ...claims];
     emit();
