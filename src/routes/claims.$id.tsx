@@ -194,14 +194,23 @@ function ClaimDetail() {
           <div className="mt-3 flex flex-wrap gap-4">
             {claim.photos.map((p) => (
               <div key={p.filename} className="w-40">
-                <div
-                  className="flex h-24 items-center justify-center rounded-md border border-border text-xs text-white/80"
-                  style={{
-                    background: `linear-gradient(135deg, hsl(${p.hue} 40% 55%), hsl(${p.hue} 30% 35%))`,
-                  }}
-                >
-                  photo
-                </div>
+                {p.src ? (
+                  <img
+                    src={p.src}
+                    alt={p.filename}
+                    loading="lazy"
+                    className="h-24 w-full rounded-md border border-border object-cover"
+                  />
+                ) : (
+                  <div
+                    className="flex h-24 items-center justify-center rounded-md border border-border text-xs text-white/80"
+                    style={{
+                      background: `linear-gradient(135deg, hsl(${p.hue} 40% 55%), hsl(${p.hue} 30% 35%))`,
+                    }}
+                  >
+                    photo
+                  </div>
+                )}
                 <p className="mt-1 truncate text-xs text-muted-foreground">{p.filename}</p>
               </div>
             ))}
