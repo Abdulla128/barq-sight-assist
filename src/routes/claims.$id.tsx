@@ -114,7 +114,7 @@ function ClaimDetail() {
     setEscalateOpen(false);
     setBanner({
       tone: "warn",
-      text: "Escalated to senior adjuster — full AI assessment and photos attached",
+      text: "Escalated to senior adjuster — full AI assessment and photos attached.",
     });
   }
 
