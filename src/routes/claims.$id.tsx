@@ -1,5 +1,5 @@
 import { createFileRoute, Link, notFound, useNavigate } from "@tanstack/react-router";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { BarqHeader } from "@/components/BarqHeader";
 import { RoutingBadge } from "@/components/RoutingBadge";
 import { useClaim, claimsStore } from "@/lib/claims-store";
@@ -12,6 +12,7 @@ import {
   totalRange,
   type Action,
   type PanelAssessment,
+  type Photo,
 } from "@/lib/claims-data";
 
 export const Route = createFileRoute("/claims/$id")({
@@ -44,6 +45,7 @@ function ClaimDetail() {
   const [showUnderHood, setShowUnderHood] = useState(false);
   const [banner, setBanner] = useState<{ tone: "ok" | "warn"; text: string } | null>(null);
   const [escalateOpen, setEscalateOpen] = useState(false);
+  const [activePhoto, setActivePhoto] = useState<Photo | null>(null);
 
   if (!claim) throw notFound();
 
@@ -193,7 +195,12 @@ function ClaimDetail() {
           <h2 className="text-sm font-semibold text-slate-900">Photos</h2>
           <div className="mt-3 flex flex-wrap gap-4">
             {claim.photos.map((p) => (
-              <div key={p.filename} className="w-40">
+              <button
+                key={p.filename}
+                onClick={() => p.src && setActivePhoto(p)}
+                disabled={!p.src}
+                className="w-40 cursor-pointer text-left disabled:cursor-default"
+              >
                 {p.src ? (
                   <img
                     src={p.src}
@@ -214,7 +221,7 @@ function ClaimDetail() {
                   </div>
                 )}
                 <p className="mt-1 truncate text-xs text-muted-foreground">{p.filename}</p>
-              </div>
+              </button>
             ))}
           </div>
         </section>
@@ -451,6 +458,10 @@ function ClaimDetail() {
         </section>
       </main>
 
+      {activePhoto && (
+        <PhotoLightbox photo={activePhoto} onClose={() => setActivePhoto(null)} />
+      )}
+
       {escalateOpen && (
         <EscalateModal onCancel={() => setEscalateOpen(false)} onConfirm={escalate} />
       )}
@@ -534,6 +545,40 @@ function EscalateModal({
             Escalate
           </button>
         </div>
+      </div>
+    </div>
+  );
+}
+
+function PhotoLightbox({ photo, onClose }: { photo: Photo; onClose: () => void }) {
+  useEffect(() => {
+    function onKeyDown(e: KeyboardEvent) {
+      if (e.key === "Escape") onClose();
+    }
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [onClose]);
+
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/90 p-4"
+      onClick={onClose}
+    >
+      <div className="relative max-h-full max-w-4xl">
+        <button
+          onClick={onClose}
+          className="absolute -top-10 right-0 rounded-md px-2 py-1 text-sm text-white hover:bg-white/10"
+          aria-label="Close photo"
+        >
+          Close
+        </button>
+        <img
+          src={photo.src}
+          alt={photo.filename}
+          className="max-h-[80vh] w-full rounded-lg object-contain shadow-xl"
+          onClick={(e) => e.stopPropagation()}
+        />
+        <p className="mt-2 text-center text-sm text-white/80">{photo.filename}</p>
       </div>
     </div>
   );
