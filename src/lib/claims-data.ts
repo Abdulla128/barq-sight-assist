@@ -136,6 +136,8 @@ export const INITIAL_CLAIMS: Claim[] = [
   {
     id: "CLM-1041",
     policyholder: "Sara M.",
+    policyNumber: "POL-8842-01",
+
     vehicle: "2021 Toyota Corolla",
     incident: "Scratched pillar in parking garage.",
     routing: "fast-track",
