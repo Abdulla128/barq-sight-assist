@@ -151,7 +151,7 @@ export const INITIAL_CLAIMS: Claim[] = [
       rationale:
         "Door scratches sev ≤2: validated, 96% coverage, low value → fast-track.",
       claimTypeValidation: "Validated — door scratch cohort (n=4,120)",
-      evidenceQuality: "High — 3 photos, well-lit, panel clearly framed",
+      evidenceQuality: "High — 2 photos, well-lit, panel clearly framed",
       claimRisk: "Low — under $500 authority threshold",
       evaluationCoverage: 96,
       citations: [
@@ -189,7 +189,7 @@ export const INITIAL_CLAIMS: Claim[] = [
     gate: {
       rationale: "Rear-panel dents sev 3: 82% coverage → standard review.",
       claimTypeValidation: "Validated — rear-impact cohort (n=1,880)",
-      evidenceQuality: "Medium — 4 photos, one angle partially obstructed",
+      evidenceQuality: "Medium — 3 photos, one angle partially obstructed",
       claimRisk: "Medium — mid-range value, single-vehicle contact",
       evaluationCoverage: 82,
       citations: [
