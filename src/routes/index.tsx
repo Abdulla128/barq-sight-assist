@@ -87,7 +87,13 @@ function QueuePage() {
                         {c.id}
                       </Link>
                     </td>
-                    <td className="px-4 py-4 align-top text-slate-800">{c.policyholder}</td>
+                    <td className="px-4 py-4 align-top text-slate-800">
+                      <div>{c.policyholder}</div>
+                      <div className="font-mono text-xs text-muted-foreground">
+                        {c.policyNumber}
+                      </div>
+                    </td>
+
                     <td className="px-4 py-4 align-top text-slate-800">{c.vehicle}</td>
                     <td className="px-4 py-4 align-top text-slate-700">{c.incident}</td>
                     <td className="px-4 py-4 align-top font-mono text-slate-900">
