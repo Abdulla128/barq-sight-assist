@@ -21,12 +21,14 @@ export const Route = createFileRoute("/intake")({
 function IntakePage() {
   const navigate = useNavigate();
   const [policyholder, setPolicyholder] = useState("Layla H.");
+  const [policyNumber, setPolicyNumber] = useState("POL-6104-08");
   const [make, setMake] = useState("Kia");
   const [model, setModel] = useState("Sportage");
   const [year, setYear] = useState("2020");
   const [incident, setIncident] = useState(
     "Backed into a bollard at low speed; rear bumper impact."
   );
+
   const [photoName, setPhotoName] = useState<string | null>(null);
   const [thumb, setThumb] = useState<string | null>(null);
   const [analyzing, setAnalyzing] = useState(false);
@@ -46,10 +48,12 @@ function IntakePage() {
     setTimeout(() => {
       const claim = buildIntakeClaim({
         policyholder,
+        policyNumber,
         vehicle: `${year} ${make} ${model}`,
         incident,
         photoName: photoName || undefined,
       });
+
       claimsStore.add(claim);
       navigate({ to: "/claims/$id", params: { id: claim.id } });
     }, 2000);
@@ -71,14 +75,26 @@ function IntakePage() {
           onSubmit={onSubmit}
           className="space-y-5 rounded-lg border border-border bg-white p-6 shadow-sm"
         >
-          <Field label="Policyholder">
-            <input
-              className={inputCls}
-              value={policyholder}
-              onChange={(e) => setPolicyholder(e.target.value)}
-              required
-            />
-          </Field>
+          <div className="grid grid-cols-2 gap-4">
+            <Field label="Policyholder">
+              <input
+                className={inputCls}
+                value={policyholder}
+                onChange={(e) => setPolicyholder(e.target.value)}
+                required
+              />
+            </Field>
+            <Field label="Policy number">
+              <input
+                className={inputCls}
+                value={policyNumber}
+                onChange={(e) => setPolicyNumber(e.target.value)}
+                placeholder="POL-0000-00"
+                required
+              />
+            </Field>
+          </div>
+
           <div className="grid grid-cols-3 gap-4">
             <Field label="Make">
               <input

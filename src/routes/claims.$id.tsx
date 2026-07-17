@@ -157,6 +157,10 @@ function ClaimDetail() {
               <p className="mt-1 text-sm text-slate-700">
                 {claim.policyholder} · {claim.vehicle}
               </p>
+              <p className="mt-0.5 font-mono text-xs text-muted-foreground">
+                Policy {claim.policyNumber}
+              </p>
+
               <p className="mt-1 text-sm text-muted-foreground">{claim.incident}</p>
               {claim.note && (
                 <p className="mt-2 text-xs text-rose-700">Note: {claim.note}</p>

@@ -70,11 +70,13 @@ import claimCFrontImg from "@/assets/claim-c-front.jpg";
 export interface Claim {
   id: string;
   policyholder: string;
+  policyNumber: string;
   vehicle: string;
   incident: string;
   routing: Routing;
   status: Status;
   panels: PanelAssessment[];
+
   gate: EvidenceGate;
   photos: Photo[];
   activity: ActivityEntry[];
@@ -134,6 +136,8 @@ export const INITIAL_CLAIMS: Claim[] = [
   {
     id: "CLM-1041",
     policyholder: "Sara M.",
+    policyNumber: "POL-8842-01",
+
     vehicle: "2021 Toyota Corolla",
     incident: "Scratched pillar in parking garage.",
     routing: "fast-track",
@@ -171,6 +175,8 @@ export const INITIAL_CLAIMS: Claim[] = [
   {
     id: "CLM-1042",
     policyholder: "Omar K.",
+    policyNumber: "POL-7391-04",
+
     vehicle: "2019 Honda Accord",
     incident: "Rear-ended at traffic light.",
     routing: "standard",
@@ -212,6 +218,8 @@ export const INITIAL_CLAIMS: Claim[] = [
   {
     id: "CLM-1043",
     policyholder: "Fatima A.",
+    policyNumber: "POL-5527-12",
+
     vehicle: "2022 Nissan Patrol",
     incident: "Multi-vehicle highway collision, airbags deployed.",
     routing: "escalated",
@@ -254,6 +262,7 @@ export const INITIAL_CLAIMS: Claim[] = [
 // Claim D — revealed via intake demo.
 export function buildIntakeClaim(input: {
   policyholder: string;
+  policyNumber: string;
   vehicle: string;
   incident: string;
   photoName?: string;
@@ -262,8 +271,10 @@ export function buildIntakeClaim(input: {
   return {
     id,
     policyholder: input.policyholder,
+    policyNumber: input.policyNumber,
     vehicle: input.vehicle,
     incident: input.incident,
+
     routing: "standard",
     status: "pending",
     panels: [
