@@ -75,14 +75,26 @@ function IntakePage() {
           onSubmit={onSubmit}
           className="space-y-5 rounded-lg border border-border bg-white p-6 shadow-sm"
         >
-          <Field label="Policyholder">
-            <input
-              className={inputCls}
-              value={policyholder}
-              onChange={(e) => setPolicyholder(e.target.value)}
-              required
-            />
-          </Field>
+          <div className="grid grid-cols-2 gap-4">
+            <Field label="Policyholder">
+              <input
+                className={inputCls}
+                value={policyholder}
+                onChange={(e) => setPolicyholder(e.target.value)}
+                required
+              />
+            </Field>
+            <Field label="Policy number">
+              <input
+                className={inputCls}
+                value={policyNumber}
+                onChange={(e) => setPolicyNumber(e.target.value)}
+                placeholder="POL-0000-00"
+                required
+              />
+            </Field>
+          </div>
+
           <div className="grid grid-cols-3 gap-4">
             <Field label="Make">
               <input
