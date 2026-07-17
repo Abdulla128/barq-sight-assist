@@ -175,6 +175,8 @@ export const INITIAL_CLAIMS: Claim[] = [
   {
     id: "CLM-1042",
     policyholder: "Omar K.",
+    policyNumber: "POL-7391-04",
+
     vehicle: "2019 Honda Accord",
     incident: "Rear-ended at traffic light.",
     routing: "standard",
