@@ -262,6 +262,7 @@ export const INITIAL_CLAIMS: Claim[] = [
 // Claim D — revealed via intake demo.
 export function buildIntakeClaim(input: {
   policyholder: string;
+  policyNumber: string;
   vehicle: string;
   incident: string;
   photoName?: string;
@@ -270,8 +271,10 @@ export function buildIntakeClaim(input: {
   return {
     id,
     policyholder: input.policyholder,
+    policyNumber: input.policyNumber,
     vehicle: input.vehicle,
     incident: input.incident,
+
     routing: "standard",
     status: "pending",
     panels: [
