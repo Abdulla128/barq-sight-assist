@@ -48,10 +48,12 @@ function IntakePage() {
     setTimeout(() => {
       const claim = buildIntakeClaim({
         policyholder,
+        policyNumber,
         vehicle: `${year} ${make} ${model}`,
         incident,
         photoName: photoName || undefined,
       });
+
       claimsStore.add(claim);
       navigate({ to: "/claims/$id", params: { id: claim.id } });
     }, 2000);
