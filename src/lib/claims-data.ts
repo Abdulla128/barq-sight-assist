@@ -70,11 +70,13 @@ import claimCFrontImg from "@/assets/claim-c-front.jpg";
 export interface Claim {
   id: string;
   policyholder: string;
+  policyNumber: string;
   vehicle: string;
   incident: string;
   routing: Routing;
   status: Status;
   panels: PanelAssessment[];
+
   gate: EvidenceGate;
   photos: Photo[];
   activity: ActivityEntry[];
