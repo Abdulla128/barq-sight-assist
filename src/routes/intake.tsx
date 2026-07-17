@@ -21,12 +21,14 @@ export const Route = createFileRoute("/intake")({
 function IntakePage() {
   const navigate = useNavigate();
   const [policyholder, setPolicyholder] = useState("Layla H.");
+  const [policyNumber, setPolicyNumber] = useState("POL-6104-08");
   const [make, setMake] = useState("Kia");
   const [model, setModel] = useState("Sportage");
   const [year, setYear] = useState("2020");
   const [incident, setIncident] = useState(
     "Backed into a bollard at low speed; rear bumper impact."
   );
+
   const [photoName, setPhotoName] = useState<string | null>(null);
   const [thumb, setThumb] = useState<string | null>(null);
   const [analyzing, setAnalyzing] = useState(false);
