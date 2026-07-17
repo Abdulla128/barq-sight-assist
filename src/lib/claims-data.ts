@@ -218,6 +218,8 @@ export const INITIAL_CLAIMS: Claim[] = [
   {
     id: "CLM-1043",
     policyholder: "Fatima A.",
+    policyNumber: "POL-5527-12",
+
     vehicle: "2022 Nissan Patrol",
     incident: "Multi-vehicle highway collision, airbags deployed.",
     routing: "escalated",
