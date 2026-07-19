@@ -159,7 +159,7 @@ export const INITIAL_CLAIMS: Claim[] = [
       claimRisk: "Low — under $500 authority threshold",
       evaluationCoverage: 96,
       citations: [
-        { panel: "Front door L", source: "Carrier cost table v2.3 · paint + light labor" },
+        { panel: "Front door L", source: "Carrier Repair Cost Table v2.3 · Item DR-118 · Regional rate card" },
       ],
     },
     photos: [
@@ -199,9 +199,9 @@ export const INITIAL_CLAIMS: Claim[] = [
       claimRisk: "Medium — mid-range value, single-vehicle contact",
       evaluationCoverage: 82,
       citations: [
-        { panel: "Rear bumper", source: "Carrier cost table v2.3 · parts + labor" },
-        { panel: "Trunk lid", source: "Carrier cost table v2.3 · refinish schedule" },
-        { panel: "Rear quarter L", source: "Carrier cost table v2.3 · paint blend" },
+        { panel: "Rear bumper", source: "Carrier Repair Cost Table v2.3 · Item RB-204 · Regional rate card" },
+        { panel: "Trunk lid", source: "Carrier Repair Cost Table v2.3 · Item TL-092 · Regional rate card" },
+        { panel: "Rear quarter L", source: "Carrier Repair Cost Table v2.3 · Item RQ-047 · Regional rate card" },
       ],
     },
     photos: [
@@ -243,8 +243,8 @@ export const INITIAL_CLAIMS: Claim[] = [
       claimRisk: "High — potential total loss, injury context",
       evaluationCoverage: 41,
       citations: [
-        { panel: "Front bumper", source: "Carrier cost table v2.3 · OEM replacement" },
-        { panel: "Hood", source: "Carrier cost table v2.3 · OEM replacement + refinish" },
+        { panel: "Front bumper", source: "Carrier Repair Cost Table v2.3 · Item FB-201 · Regional rate card" },
+        { panel: "Hood", source: "Carrier Repair Cost Table v2.3 · Item HD-112 · Regional rate card" },
       ],
     },
     photos: [
@@ -293,7 +293,7 @@ export function buildIntakeClaim(input: {
       claimRisk: "Low-medium — single panel, mid value",
       evaluationCoverage: 88,
       citations: [
-        { panel: "Rear bumper", source: "Carrier cost table v2.3 · parts + labor" },
+        { panel: "Rear bumper", source: "Carrier Repair Cost Table v2.3 · Item RB-204 · Regional rate card" },
       ],
     },
     photos: [
