@@ -103,7 +103,7 @@ function ClaimDetail() {
   }
 
   const escalationNotification = {
-    title: "Escalated to senior review — AI assessment, agent edits, evidence, and escalation reason attached.",
+    title: "Escalated to senior review. AI assessment, agent edits, evidence, and escalation reason attached.",
     body: "No further action available.",
   };
 
@@ -412,7 +412,6 @@ function ClaimDetail() {
           <section className="mt-6 rounded-lg border border-rose-200 bg-rose-50 p-4 text-sm shadow-sm">
             <div className="font-semibold text-rose-800">{escalationNotification.title}</div>
             <p className="mt-1 text-rose-700">{escalationNotification.body}</p>
-            <p className="mt-2 text-rose-600/80">No further action available.</p>
           </section>
         ) : (
           <section className="mt-6 rounded-lg border border-border bg-white p-4 text-sm text-muted-foreground shadow-sm">
@@ -446,11 +445,12 @@ function ClaimDetail() {
                 <div className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
                   Cost basis by panel
                 </div>
-                <ul className="mt-2 space-y-1 text-sm text-slate-800">
+                <ul className="mt-2 space-y-2 text-sm text-slate-800">
                   {claim.gate.citations.map((c) => (
-                    <li key={c.panel}>
-                      <span className="font-medium">{c.panel}:</span>{" "}
-                      <span className="text-slate-700">{c.source}</span>
+                    <li key={c.panel} className="space-y-0.5">
+                      <div className="font-medium text-slate-900">{c.panel}</div>
+                      <div className="text-slate-700">{c.method}</div>
+                      <div className="text-slate-700">{c.source}</div>
                     </li>
                   ))}
                 </ul>
