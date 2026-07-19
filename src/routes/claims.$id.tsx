@@ -103,8 +103,8 @@ function ClaimDetail() {
   }
 
   const escalationNotification = {
-    title: "Escalated to senior review",
-    body: "AI assessment, agent edits, evidence, and escalation reason attached.",
+    title: "Escalated to senior review — AI assessment, agent edits, evidence, and escalation reason attached.",
+    body: "No further action available.",
   };
 
   function escalate(reason: string, note: string) {
@@ -444,7 +444,7 @@ function ClaimDetail() {
               />
               <div className="md:col-span-2">
                 <div className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
-                  Per-panel cost citations
+                  Cost basis by panel
                 </div>
                 <ul className="mt-2 space-y-1 text-sm text-slate-800">
                   {claim.gate.citations.map((c) => (
