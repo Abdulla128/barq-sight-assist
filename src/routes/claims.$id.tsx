@@ -401,6 +401,12 @@ function ClaimDetail() {
               Escalate
             </button>
           </section>
+        ) : claim.status === "escalated" ? (
+          <section className="mt-6 rounded-lg border border-rose-200 bg-rose-50 p-4 text-sm shadow-sm">
+            <div className="font-semibold text-rose-800">{escalationNotification.title}</div>
+            <p className="mt-1 text-rose-700">{escalationNotification.body}</p>
+            <p className="mt-2 text-rose-600/80">No further action available.</p>
+          </section>
         ) : (
           <section className="mt-6 rounded-lg border border-border bg-white p-4 text-sm text-muted-foreground shadow-sm">
             This claim is {claim.status.replace("-", " ")} — no further action available.
