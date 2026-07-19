@@ -19,7 +19,7 @@ export const Route = createFileRoute("/claims/$id")({
   head: ({ params }) => ({
     meta: [
       { title: `${params.id} — Barq` },
-      { name: "description", content: "Barq claim detail — Evidence Gate and AI assessment." },
+      { name: "description", content: "Barq claim detail — routing basis and AI assessment." },
     ],
   }),
   component: ClaimDetail,
@@ -191,7 +191,7 @@ function ClaimDetail() {
           {/* Evidence Gate strip */}
           <div className="mt-5 rounded-md border border-slate-200 bg-slate-50 px-4 py-3">
             <div className="flex items-center gap-2 text-xs font-medium uppercase tracking-wide text-slate-500">
-              Evidence Gate
+              ROUTING BASIS
             </div>
             <p className="mt-1 text-sm text-slate-800">{claim.gate.rationale}</p>
             <div className="mt-2 flex items-center gap-4 text-xs text-muted-foreground">
@@ -426,7 +426,7 @@ function ClaimDetail() {
             className="flex w-full items-center justify-between px-6 py-4 text-left"
           >
             <span className="text-sm font-semibold text-slate-900">
-              Under the hood — Evidence Gate inputs
+              Under the hood — Routing inputs
             </span>
             <span className="text-xs text-muted-foreground">
               {showUnderHood ? "Hide" : "Show"}

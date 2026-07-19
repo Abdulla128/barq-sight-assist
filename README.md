@@ -26,7 +26,7 @@ Then open the local URL shown in the terminal (typically http://localhost:8080).
 
 ## Demo path
 
-1. Queue → three claims routed by the Evidence Gate (fast-track / standard / escalated)
+1. Queue → three claims routed by the routing basis (fast-track / standard / escalated)
 
 2. Claim A → one-click approve
 
