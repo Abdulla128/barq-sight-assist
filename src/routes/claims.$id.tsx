@@ -102,6 +102,11 @@ function ClaimDetail() {
     });
   }
 
+  const escalationNotification = {
+    title: "Escalated to senior review",
+    body: "AI assessment, agent edits, evidence, and escalation reason attached.",
+  };
+
   function escalate(reason: string, note: string) {
     claimsStore.update(claim!.id, (c) => {
       c.status = "escalated";
@@ -116,7 +121,7 @@ function ClaimDetail() {
     setEscalateOpen(false);
     setBanner({
       tone: "warn",
-      text: "Escalated to senior adjuster — full AI assessment and photos attached.",
+      text: `${escalationNotification.title}. ${escalationNotification.body}`,
     });
   }
 
@@ -136,13 +141,20 @@ function ClaimDetail() {
 
         {banner && (
           <div
-            className={`mb-6 rounded-md border px-4 py-3 text-sm ${
+            className={`mb-6 rounded-lg border px-4 py-4 text-sm shadow-sm ${
               banner.tone === "ok"
                 ? "border-emerald-200 bg-emerald-50 text-emerald-800"
                 : "border-rose-200 bg-rose-50 text-rose-800"
             }`}
           >
-            {banner.text}
+            {banner.tone === "warn" ? (
+              <>
+                <div className="font-semibold">{escalationNotification.title}</div>
+                <p className="mt-1">{escalationNotification.body}</p>
+              </>
+            ) : (
+              banner.text
+            )}
           </div>
         )}
 
@@ -395,6 +407,12 @@ function ClaimDetail() {
             >
               Escalate
             </button>
+          </section>
+        ) : claim.status === "escalated" ? (
+          <section className="mt-6 rounded-lg border border-rose-200 bg-rose-50 p-4 text-sm shadow-sm">
+            <div className="font-semibold text-rose-800">{escalationNotification.title}</div>
+            <p className="mt-1 text-rose-700">{escalationNotification.body}</p>
+            <p className="mt-2 text-rose-600/80">No further action available.</p>
           </section>
         ) : (
           <section className="mt-6 rounded-lg border border-border bg-white p-4 text-sm text-muted-foreground shadow-sm">
