@@ -16,7 +16,7 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Barq — Claims queue" },
       {
         property: "og:description",
-        content: "AI-assisted car insurance claims review. Evidence Gate routing.",
+        content: "AI-assisted car insurance claims review. Routing basis.",
       },
     ],
   }),
@@ -68,7 +68,7 @@ function QueuePage() {
                 <th className="px-4 py-3 font-medium">Vehicle</th>
                 <th className="px-4 py-3 font-medium">Incident</th>
                 <th className="px-4 py-3 font-medium">Estimate</th>
-                <th className="px-4 py-3 font-medium">Routing · Evidence Gate</th>
+                <th className="px-4 py-3 font-medium">Routing basis</th>
                 <th className="px-4 py-3 font-medium">Status</th>
               </tr>
             </thead>

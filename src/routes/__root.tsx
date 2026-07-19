@@ -81,13 +81,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "Barq routes AI-drafted vehicle damage assessments through an Evidence Gate. Humans decide.",
+          "Barq routes AI-drafted vehicle damage assessments through a routing basis. Humans decide.",
       },
       { property: "og:title", content: "Barq — AI-assisted claims review" },
       {
         property: "og:description",
         content:
-          "Claims queue with Evidence Gate routing: Fast-track, Standard review, Escalated.",
+          "Claims queue with routing basis: Fast-track, Standard review, Escalated.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
