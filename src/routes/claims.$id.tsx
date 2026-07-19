@@ -147,7 +147,7 @@ function ClaimDetail() {
                 : "border-rose-200 bg-rose-50 text-rose-800"
             }`}
           >
-            {banner.text === `${escalationNotification.title}. ${escalationNotification.body}` ? (
+            {banner.tone === "warn" ? (
               <>
                 <div className="font-semibold">{escalationNotification.title}</div>
                 <p className="mt-1">{escalationNotification.body}</p>
