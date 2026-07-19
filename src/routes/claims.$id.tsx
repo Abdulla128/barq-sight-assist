@@ -141,13 +141,20 @@ function ClaimDetail() {
 
         {banner && (
           <div
-            className={`mb-6 rounded-md border px-4 py-3 text-sm ${
+            className={`mb-6 rounded-lg border px-4 py-4 text-sm shadow-sm ${
               banner.tone === "ok"
                 ? "border-emerald-200 bg-emerald-50 text-emerald-800"
                 : "border-rose-200 bg-rose-50 text-rose-800"
             }`}
           >
-            {banner.text}
+            {banner.text === `${escalationNotification.title}. ${escalationNotification.body}` ? (
+              <>
+                <div className="font-semibold">{escalationNotification.title}</div>
+                <p className="mt-1">{escalationNotification.body}</p>
+              </>
+            ) : (
+              banner.text
+            )}
           </div>
         )}
 
