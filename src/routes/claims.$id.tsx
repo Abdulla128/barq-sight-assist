@@ -102,6 +102,11 @@ function ClaimDetail() {
     });
   }
 
+  const escalationNotification = {
+    title: "Escalated to senior review",
+    body: "AI assessment, agent edits, evidence, and escalation reason attached.",
+  };
+
   function escalate(reason: string, note: string) {
     claimsStore.update(claim!.id, (c) => {
       c.status = "escalated";
@@ -116,7 +121,7 @@ function ClaimDetail() {
     setEscalateOpen(false);
     setBanner({
       tone: "warn",
-      text: "Escalated to senior adjuster — full AI assessment and photos attached.",
+      text: `${escalationNotification.title}. ${escalationNotification.body}`,
     });
   }
 
