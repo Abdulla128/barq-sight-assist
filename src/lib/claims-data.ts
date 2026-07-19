@@ -42,7 +42,7 @@ export interface EvidenceGate {
   evidenceQuality: string;
   claimRisk: string;
   evaluationCoverage: number; // %
-  citations: { panel: string; source: string }[];
+  citations: { panel: string; method: string; source: string }[];
 }
 
 export interface ActivityEntry {
@@ -159,7 +159,11 @@ export const INITIAL_CLAIMS: Claim[] = [
       claimRisk: "Low — under $500 authority threshold",
       evaluationCoverage: 96,
       citations: [
-        { panel: "Front door L", source: "Carrier Repair Cost Table v2.3 · Item DR-118 · Regional rate card" },
+        {
+          panel: "Front door L",
+          method: "Refinish — repair",
+          source: "Carrier Cost Table v2.3 · Item DR-118 · Parts + labor (regional rate card)",
+        },
       ],
     },
     photos: [
@@ -199,9 +203,21 @@ export const INITIAL_CLAIMS: Claim[] = [
       claimRisk: "Medium — mid-range value, single-vehicle contact",
       evaluationCoverage: 82,
       citations: [
-        { panel: "Rear bumper", source: "Carrier Repair Cost Table v2.3 · Item RB-204 · Regional rate card" },
-        { panel: "Trunk lid", source: "Carrier Repair Cost Table v2.3 · Item TL-092 · Regional rate card" },
-        { panel: "Rear quarter L", source: "Carrier Repair Cost Table v2.3 · Item RQ-047 · Regional rate card" },
+        {
+          panel: "Rear bumper",
+          method: "OEM replacement",
+          source: "Carrier Cost Table v2.3 · Item RB-204 · Parts + labor (regional rate card)",
+        },
+        {
+          panel: "Trunk lid",
+          method: "Refinish — repair",
+          source: "Carrier Cost Table v2.3 · Item TL-092 · Labor + paint (regional rate card)",
+        },
+        {
+          panel: "Rear quarter L",
+          method: "Spot refinish — repair",
+          source: "Carrier Cost Table v2.3 · Item RQ-047 · Labor + paint (regional rate card)",
+        },
       ],
     },
     photos: [
@@ -243,8 +259,16 @@ export const INITIAL_CLAIMS: Claim[] = [
       claimRisk: "High — potential total loss, injury context",
       evaluationCoverage: 41,
       citations: [
-        { panel: "Front bumper", source: "Carrier Repair Cost Table v2.3 · Item FB-201 · Regional rate card" },
-        { panel: "Hood", source: "Carrier Repair Cost Table v2.3 · Item HD-112 · Regional rate card" },
+        {
+          panel: "Front bumper",
+          method: "OEM replacement",
+          source: "Carrier Cost Table v2.3 · Item FB-201 · Parts + labor (regional rate card)",
+        },
+        {
+          panel: "Hood",
+          method: "OEM replacement + refinish",
+          source: "Carrier Cost Table v2.3 · Item HD-112 · Parts + labor + paint (regional rate card)",
+        },
       ],
     },
     photos: [
@@ -293,7 +317,11 @@ export function buildIntakeClaim(input: {
       claimRisk: "Low-medium — single panel, mid value",
       evaluationCoverage: 88,
       citations: [
-        { panel: "Rear bumper", source: "Carrier Repair Cost Table v2.3 · Item RB-204 · Regional rate card" },
+        {
+          panel: "Rear bumper",
+          method: "Refinish — repair",
+          source: "Carrier Cost Table v2.3 · Item RB-204 · Labor + paint (regional rate card)",
+        },
       ],
     },
     photos: [
