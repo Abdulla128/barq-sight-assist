@@ -195,7 +195,7 @@ function ClaimDetail() {
             </div>
             <p className="mt-1 text-sm text-slate-800">{claim.gate.rationale}</p>
             <div className="mt-2 flex items-center gap-4 text-xs text-muted-foreground">
-              <span>Evaluation coverage: {claim.gate.evaluationCoverage}%</span>
+              <span>Validated coverage for this claim type: {claim.gate.evaluationCoverage}%</span>
               <div className="h-1.5 flex-1 max-w-[240px] rounded-full bg-slate-200">
                 <div
                   className="h-1.5 rounded-full bg-slate-700"
@@ -419,14 +419,14 @@ function ClaimDetail() {
           </section>
         )}
 
-        {/* Under the hood */}
+        {/* Assessment details */}
         <section className="mt-6 rounded-lg border border-border bg-white shadow-sm">
           <button
             onClick={() => setShowUnderHood((v) => !v)}
             className="flex w-full items-center justify-between px-6 py-4 text-left"
           >
             <span className="text-sm font-semibold text-slate-900">
-              Under the hood — Routing inputs
+              Assessment details — Routing inputs
             </span>
             <span className="text-xs text-muted-foreground">
               {showUnderHood ? "Hide" : "Show"}
@@ -438,7 +438,7 @@ function ClaimDetail() {
               <GateRow label="Evidence quality" value={claim.gate.evidenceQuality} />
               <GateRow label="Claim risk" value={claim.gate.claimRisk} />
               <GateRow
-                label="Evaluation coverage"
+                label="Validated coverage for this claim type"
                 value={`${claim.gate.evaluationCoverage}%`}
               />
               <div className="md:col-span-2">
