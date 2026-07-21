@@ -97,7 +97,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: "/__l5e/assets-v1/10730a91-0f69-4500-8499-2a39d207a242/barq-logo.png", type: "image/png" },
     ],
   }),
   shellComponent: RootShell,
